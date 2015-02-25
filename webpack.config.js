@@ -5,6 +5,9 @@ var _     = require('lodash'),
   DEBUG   = (argv.env || "development") === "development",
   webpack = require('webpack');
 
+/*
+ * Common configuration chunk
+ */
 var defaultConfig = {
   cache: DEBUG,
   debug: DEBUG,
@@ -22,7 +25,18 @@ var defaultConfig = {
   }
 };
 
+
+/*
+ * Configuration for the client-side bundle
+ */
 var config = _.extend({
+  externals: {
+    'jquery': 'window.$',
+    'lodash': 'window._',
+    'react': 'window.React',
+    'react-router': 'window.ReactRouter',
+    'superagent': 'window.superagent'
+  },
   entry: {
     main: './app/assets/sources/main'
   },
@@ -31,13 +45,6 @@ var config = _.extend({
     publicPath: '/assets/build/',
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js'
-  },
-  externals: {
-    'jquery': 'window.$',
-    'lodash': 'window._',
-    'react': 'window.React',
-    'react-router': 'window.ReactRouter',
-    'superagent': 'window.superagent'
   },
   plugins: [
     new webpack.optimize.AggressiveMergingPlugin(),
