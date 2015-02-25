@@ -2,15 +2,14 @@
 
 var webpack = require('webpack'),
     _       = require('lodash'),
-    argv    = require('minimist')(process.argv.slice(2));
-
-var DEBUG_MODE = !argv.production;
-
-/*
- * Webpack configuaration
- */
+    argv    = require('minimist')(process.argv.slice(2)), 
+    DEBUG_MODE = (argv.env || "development") === "development";
 
 var config = {
+  output: {
+    path: './app/assets/javascripts/build',
+    publicPath: './build/'
+  },
   cache: DEBUG_MODE,
   debug: DEBUG_MODE,
   devtool: DEBUG_MODE ? '#inline-source-map' : false,
@@ -20,7 +19,16 @@ var config = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin()
-  ]
+  ],
+  module: {
+    loaders: [
+      {
+        test: /.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader?experimental&optional=runtime'
+      }
+    ]
+  }
 };
 
 module.exports = config;

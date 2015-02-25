@@ -3,6 +3,8 @@
   "devDependencies": {
     "babel": "*",
     "babel-core": "*",
+    "babel-loader": "^4.0.0",
+    "babel-runtime": "^4.4.6",
     "del": "*",
     "envify": "*",
     "gulp": "*",
@@ -13,7 +15,6 @@
     "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
-    "regenerator": "*",
     "require-dir": "*",
     "webpack": "^1.6.0"
   },
