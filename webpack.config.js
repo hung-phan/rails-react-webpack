@@ -47,13 +47,14 @@ var config = _.extend({
     chunkFilename: '[id].bundle.js'
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
       '__DEV__': DEBUG
     }),
-    new webpack.optimize.CommonsChunkPlugin('common.js')
+    new webpack.optimize.CommonsChunkPlugin('common.bundle.js')
   ]
 }, defaultConfig);
 
