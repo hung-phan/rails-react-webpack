@@ -12,8 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require react
-//= require react_ujs
 //= require superagent/superagent
-//= require react-router/build/global/ReactRouter
-//= require build/main-build
+//= require build/main.bundle

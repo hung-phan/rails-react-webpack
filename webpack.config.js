@@ -7,7 +7,7 @@ var webpack = require('webpack'),
 
 var config = {
   entry: {
-    page: './app/assets/sources/main'
+    main: './app/assets/sources/main'
   },
   output: {
     path: './app/assets/javascripts/build',
