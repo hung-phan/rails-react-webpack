@@ -4,31 +4,32 @@
     "babel": "*",
     "babel-core": "*",
     "babelify": "*",
-    "envify": "*",
     "browserify": "=8.0.1",
     "browserify-shim": "*",
-    "watchify": "*",
     "del": "*",
+    "envify": "*",
     "gulp": "*",
     "gulp-if": "*",
     "gulp-plumber": "*",
     "gulp-util": "*",
-    "lodash": "*",
     "jest-cli": "*",
+    "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
     "regenerator": "*",
     "require-dir": "*",
-    "vinyl-transform": "*"
+    "vinyl-transform": "*",
+    "watchify": "*",
+    "webpack": "^1.6.0"
   },
-  "dependencies": { },
+  "dependencies": {},
   "scripts": {
     "test": "jest"
   },
   "jest": {
     "scriptPreprocessor": "./preprocessor.js"
   },
-  "browser": { },
+  "browser": {},
   "browserify-shim": {
     "jquery": "global:$",
     "lodash": "global:_",
