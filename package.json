@@ -4,7 +4,7 @@
     "babel": "*",
     "babel-core": "*",
     "babel-loader": "^4.0.0",
-    "babel-runtime": "^4.4.6",
+    "babel-runtime": "^4.5.1",
     "del": "*",
     "envify": "*",
     "gulp": "*",

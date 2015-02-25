@@ -1,9 +1,9 @@
 'use strict';
 
-var webpack = require('webpack'),
-    _       = require('lodash'),
-    argv    = require('minimist')(process.argv.slice(2)), 
-    DEBUG_MODE = (argv.env || "development") === "development";
+var _       = require('lodash'),
+    argv    = require('minimist')(process.argv.slice(2)),
+    DEBUG   = (argv.env || "development") === "development",
+    webpack = require('webpack');
 
 var config = {
   entry: {
@@ -11,6 +11,7 @@ var config = {
   },
   output: {
     path: './app/assets/javascripts/build',
+    publicPath: '/assets/',
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js'
   },
@@ -22,17 +23,23 @@ var config = {
     'superagent': 'window.superagent'
   },
   resolve: {
-    modulesDirectories: ['node_modules', 'vendor/assets/bower_components']
+    modulesDirectories: ['node_modules', 'vendor/assets/bower_components'],
+    extensions: ['', '.js']
   },
-  cache: DEBUG_MODE,
-  debug: DEBUG_MODE,
-  devtool: DEBUG_MODE ? '#inline-source-map' : false,
+  cache: DEBUG,
+  debug: DEBUG,
+  devtool: DEBUG ? '#inline-source-map' : false,
   stats: {
     colors: true,
-    reasons: DEBUG_MODE
+    reasons: DEBUG
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
+      '__DEV__': DEBUG
+    }),
+    new webpack.optimize.CommonsChunkPlugin('common.js')
   ],
   module: {
     loaders: [
