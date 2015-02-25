@@ -1,0 +1,9 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "lodash": "latest",
+    "js-csp": "latest",
+    "react-router": "latest",
+    "superagent": "latest"
+  }
+}
