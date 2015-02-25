@@ -6,9 +6,14 @@ var webpack = require('webpack'),
     DEBUG_MODE = (argv.env || "development") === "development";
 
 var config = {
+  entry: {
+    page: './app/assets/sources/main'
+  },
   output: {
     path: './app/assets/javascripts/build',
-    publicPath: './build/'
+    publicPath: './app/assets/javascripts/build/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[id].bundle.js'
   },
   cache: DEBUG_MODE,
   debug: DEBUG_MODE,
