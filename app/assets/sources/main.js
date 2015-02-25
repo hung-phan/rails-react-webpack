@@ -3,7 +3,7 @@
 // lib
 let $          = require('jquery');
 let _          = require('lodash');
-let superagent = require('superagent');
+//let superagent = require('superagent');
 let Router     = require('react-router');
 
 // component

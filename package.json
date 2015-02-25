@@ -25,14 +25,6 @@
   "jest": {
     "scriptPreprocessor": "./preprocessor.js"
   },
-  "browser": {},
-  "browserify-shim": {
-    "jquery": "global:$",
-    "lodash": "global:_",
-    "react": "global:React",
-    "react-router": "global:ReactRouter",
-    "superagent": "global:superagent"
-  },
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"

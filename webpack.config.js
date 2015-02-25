@@ -11,9 +11,18 @@ var config = {
   },
   output: {
     path: './app/assets/javascripts/build',
-    publicPath: './app/assets/javascripts/build/',
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js'
+  },
+  externals: {
+    'jquery': 'window.$',
+    'lodash': 'window._',
+    'react': 'window.React',
+    'react-router': 'window.ReactRouter',
+    'superagent': 'window.superagent'
+  },
+  resolve: {
+    modulesDirectories: ['node_modules', 'vendor/assets/bower_components']
   },
   cache: DEBUG_MODE,
   debug: DEBUG_MODE,
