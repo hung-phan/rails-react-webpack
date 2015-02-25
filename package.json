@@ -3,9 +3,6 @@
   "devDependencies": {
     "babel": "*",
     "babel-core": "*",
-    "babelify": "*",
-    "browserify": "=8.0.1",
-    "browserify-shim": "*",
     "del": "*",
     "envify": "*",
     "gulp": "*",
@@ -19,7 +16,6 @@
     "regenerator": "*",
     "require-dir": "*",
     "vinyl-transform": "*",
-    "watchify": "*",
     "webpack": "^1.6.0"
   },
   "dependencies": {},

@@ -20,7 +20,7 @@ var config = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin()
-  ],
+  ]
 };
 
 module.exports = config;
