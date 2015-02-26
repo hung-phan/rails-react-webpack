@@ -1,9 +1,10 @@
 'use strict';
 
-var _     = require('lodash'),
-  argv    = require('minimist')(process.argv.slice(2)),
-  DEBUG   = (argv.env || "development") === "development",
-  webpack = require('webpack');
+var _       = require('lodash'),
+    path    = require('path'),
+    argv    = require('minimist')(process.argv.slice(2)),
+    DEBUG   = (argv.env || "development") === "development",
+    webpack = require('webpack');
 
 /*
  * Common configuration chunk
@@ -47,14 +48,17 @@ var config = _.extend({
     chunkFilename: '[id].bundle.js'
   },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
+    //new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),
+    new webpack.ResolverPlugin([
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
+    ]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
       '__DEV__': DEBUG
-    }),
-    new webpack.optimize.CommonsChunkPlugin('common.bundle.js')
+    })
   ]
 }, defaultConfig);
 
