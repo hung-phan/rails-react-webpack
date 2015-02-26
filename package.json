@@ -5,6 +5,7 @@
     "babel-core": "*",
     "babel-loader": "^4.0.0",
     "babel-runtime": "^4.5.1",
+    "chunk-manifest-webpack-plugin": "*",
     "del": "*",
     "envify": "*",
     "exports-loader": "^0.6.2",
