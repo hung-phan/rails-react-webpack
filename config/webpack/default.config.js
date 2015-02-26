@@ -3,6 +3,15 @@
 var webpack = require('webpack');
 
 module.exports = {
+  entry: {
+    main: './app/assets/sources/main'
+  },
+  output: {
+    path: './app/assets/javascripts/build',
+    publicPath: '/assets/build/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[id].bundle.js'
+  },
   externals: {
     'jquery': 'window.$',
     'lodash': 'window._',
