@@ -6,7 +6,8 @@ var path    = require('path'),
 module.exports = {
   context: path.join(__dirname, '../', '../'),
   entry: {
-    main: './app/assets/sources/main'
+    main: './app/assets/sources/main',
+    sum: './app/assets/sources/sum'
   },
   output: {
     path: './app/assets/javascripts/build',
