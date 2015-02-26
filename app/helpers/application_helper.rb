@@ -3,7 +3,7 @@ module ApplicationHelper
     src =
       if Rails.configuration.webpack[:use_manifest]
         manifest = Rails.configuration.webpack[:asset_manifest][bundle]
-        bundle = manifest[0]
+        bundle = manifest.instance_of?(Array) ? manifest[0] : manifest
 
         "assets/#{bundle}"
       else
