@@ -5,15 +5,10 @@ var _             = require('lodash'),
     webpack       = require('webpack');
 
 module.exports = _.merge({
-  entry: {
-    main: './app/assets/sources/main'
-  },
-  output: {
-    path: './app/assets/javascripts/build',
-    publicPath: '/assets/build/',
-    filename: '[name].bundle.js',
-    chunkFilename: '[id].bundle.js'
-  },
+  cache: true,
+  debug: true,
+  outputPathinfo: true,
+  devtool: '#inline-source-map',
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"', '__DEV__': true })
   ]
