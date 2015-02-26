@@ -1,8 +1,10 @@
 'use strict';
 
-var webpack = require('webpack');
+var path    = require('path'),
+    webpack = require('webpack');
 
 module.exports = {
+  context: path.join(__dirname, '../', '../'),
   entry: {
     main: './app/assets/sources/main'
   },

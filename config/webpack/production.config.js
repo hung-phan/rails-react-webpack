@@ -6,10 +6,20 @@ var _                   = require('lodash'),
     webpack             = require('webpack');
 
 module.exports = _.merge({
-  devtool: '#inline-source-map',
+  devtool: 'source-map',
+  output: {
+    path: './public/assets'
+    filename: '[name]-[chunkhash].bundle.js',
+    chunkFilename: '[id]-[chunkhash].bundle.js'
+  },
   plugins: [
-    /*new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),*/
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"', '__DEV__': true })
+    /*new webpack.optimize.CommonsChunkPlugin('common-[chunkhash].bundle.js'),*/
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"', '__DEV__': false }),
+    new ChunkManifestPlugin({
+      filename: 'webpack-common-manifest.json',
+      manfiestVariable: 'webpackBundleManifest',
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ]
 }, defaultConfig, function(obj1, obj2) {
   if (_.isArray(obj1)) { return obj1.concat(obj2); }
