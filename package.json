@@ -3,23 +3,23 @@
   "devDependencies": {
     "babel": "*",
     "babel-core": "*",
-    "babel-loader": "^4.0.0",
-    "babel-runtime": "^4.5.1",
+    "babel-loader": "*",
+    "babel-runtime": "*",
     "chunk-manifest-webpack-plugin": "*",
     "del": "*",
     "envify": "*",
-    "exports-loader": "^0.6.2",
+    "exports-loader": "*",
     "gulp": "*",
     "gulp-if": "*",
     "gulp-plumber": "*",
     "gulp-util": "*",
-    "imports-loader": "^0.6.3",
+    "imports-loader": "*",
     "jest-cli": "*",
     "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
     "require-dir": "*",
-    "webpack": "^1.6.0"
+    "webpack": "*"
   },
   "dependencies": {},
   "scripts": {
