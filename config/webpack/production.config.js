@@ -1,14 +1,14 @@
 'use strict';
 
 var _                   = require('lodash'),
-    ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
+    ChunkManifestPlugin = require('chunk-manifest-webpack-plugin'),
     defaultConfig       = require('./default.config'),
     webpack             = require('webpack');
 
-module.exports = _.merge({
+module.exports = _.merge(defaultConfig, {
   devtool: 'source-map',
   output: {
-    path: './public/assets'
+    path: './public/assets',
     filename: '[name]-[chunkhash].bundle.js',
     chunkFilename: '[id]-[chunkhash].bundle.js'
   },
@@ -17,10 +17,10 @@ module.exports = _.merge({
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"', '__DEV__': false }),
     new ChunkManifestPlugin({
       filename: 'webpack-common-manifest.json',
-      manfiestVariable: 'webpackBundleManifest',
+      manfiestVariable: 'webpackBundleManifest'
     }),
     new webpack.optimize.UglifyJsPlugin()
   ]
-}, defaultConfig, function(obj1, obj2) {
+}, function(obj1, obj2) {
   if (_.isArray(obj1)) { return obj1.concat(obj2); }
 });
