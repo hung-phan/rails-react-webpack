@@ -6,8 +6,7 @@ var path    = require('path'),
 module.exports = {
   context: path.join(__dirname, '../', '../'),
   entry: {
-    main: './app/assets/sources/main',
-    sum: './app/assets/sources/sum'
+    main: './app/frontend/javascripts/main'
   },
   output: {
     path: './app/assets/javascripts/build',
@@ -15,13 +14,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js'
   },
-  externals: {
-    'jquery': 'window.$',
-    'lodash': 'window._',
-    'react': 'window.React',
-    'react-router': 'window.ReactRouter',
-    'superagent': 'window.superagent'
-  },
+  externals: {},
   resolve: {
     modulesDirectories: ['node_modules', 'vendor/assets/bower_components'],
     extensions: ['', '.js']

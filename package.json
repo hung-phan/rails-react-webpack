@@ -7,21 +7,23 @@
     "babel-runtime": "*",
     "chunk-manifest-webpack-plugin": "*",
     "del": "*",
-    "envify": "*",
     "exports-loader": "*",
-    "gulp": "*",
-    "gulp-if": "*",
-    "gulp-plumber": "*",
-    "gulp-util": "*",
     "imports-loader": "*",
+    "expose-loader": "*",
+    "gulp": "*",
+    "gulp-util": "*",
     "jest-cli": "*",
-    "lodash": "*",
     "minimist": "*",
     "node-notifier": "*",
-    "require-dir": "*",
     "webpack": "*"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "*",
+    "lodash": "*",
+    "superagent": "*",
+    "react": "*",
+    "react-router": "*"
+  },
   "scripts": {
     "test": "jest"
   },

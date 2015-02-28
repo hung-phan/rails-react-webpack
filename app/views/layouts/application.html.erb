@@ -6,15 +6,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= yield %>
 
-<%= yield %>
-
+  <%= webpack_manifest_script %> 
   <%= javascript_include_tag 'modernizr' %>
-  <%= javascript_include_tag 'application' %>
-  <%= webpack_manifest_script %>
-  <%= webpack_bundle_tag 'common' %>
   <%= webpack_bundle_tag 'main' %>
-  <%= webpack_bundle_tag 'sum' %>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
 

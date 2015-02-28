@@ -10,7 +10,7 @@ module ApplicationHelper
         "assets/build/#{bundle}.bundle"
       end
 
-    "<script src='#{src}'></script>".html_safe
+    "<script src='#{src}' type='text/javascript'></script>".html_safe
   end
 
   def webpack_manifest_script
@@ -18,3 +18,4 @@ module ApplicationHelper
     javascript_tag "window.webpackManifest = #{Rails.configuration.webpack[:common_manifest].to_json}"
   end
 end
+

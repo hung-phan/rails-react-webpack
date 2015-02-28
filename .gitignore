@@ -18,4 +18,4 @@
 /app/assets/javascripts/build
 node_modules
 vendor/assets/bower_components
-.ruby-gemset
+public/assets/

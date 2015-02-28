@@ -1,5 +1,5 @@
 if Rails.configuration.webpack[:use_manifest]
-  asset_manifest = Rails.root.join('public', 'assets', 'webpack-asset-manifest.json')
+  asset_manifest  = Rails.root.join('public', 'assets', 'webpack-asset-manifest.json')
   common_manifest = Rails.root.join('public', 'assets', 'webpack-common-manifest.json')
 
   if File.exist?(asset_manifest)
