@@ -7,7 +7,7 @@ module ApplicationHelper
 
         "assets/#{bundle}"
       else
-        "assets/build/#{bundle}.bundle"
+        "http://localhost:8080/assets/build/#{bundle}.bundle.js"
       end
 
     "<script src='#{src}' type='text/javascript'></script>".html_safe

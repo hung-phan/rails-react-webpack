@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: './app/assets/javascripts/build',
-    publicPath: '/assets/build/',
+    publicPath: 'http://localhost:8080/assets/build/',
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js'
   },
