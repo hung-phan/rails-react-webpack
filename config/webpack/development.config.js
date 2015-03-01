@@ -15,6 +15,13 @@ module.exports = _.merge(defaultConfig, {
   debug: true,
   outputPathinfo: true,
   devtool: '#inline-source-map',
+  module: {
+    loaders: [{
+      test: /.js$/,
+      exclude: /node_modules(?!.*(\/js-csp))/,
+      loader: 'react-hot'
+    }]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
