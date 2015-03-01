@@ -1,24 +1,32 @@
 'use strict'
 
-// expose jQuery for jquery_ujs
+// expose jQuery for jquery_ujs and React for react_ujs
 require('expose?jQuery!expose?$!jquery');
-// expose React for react_ujs
 require('expose?React!react/addons');
 
-let $      = require('jquery');
-let React  = require('react/addons');
-let Router = require('react-router');
+let csp        = require('js-csp');
+let $          = require('jquery');
+let _          = require('lodash');
+let superagent = require('superagent');
 
-// component
-let Home = require('./home/home');
+function listen(el, type) {
+  var ch = csp.chan();
+  el.addEventListener(type, function(e) {
+    console.time("listen-event");
+    csp.putAsync(ch, e);
+  });
+  return ch;
+}
 
-$(document).ready(function() {
-  // define routing
-  let routes = (
-    <Router.Route name='main_page' path='/' handler={Home}></Router.Route>
-  );
-
-  Router.run(routes, Router.HashLocation, function(Handler) {
-    React.render(React.createFactory(Handler)(), document.getElementById('route'));
+$(document).ready(() => {
+  csp.go(function*() {
+    var el = document.getElementById('ui');
+    var ch = listen(el, 'mousemove');
+    while(true) {
+      var e = yield csp.take(ch);
+      console.timeEnd("listen-event");
+      el.innerHTML = ((e.layerX || e.clientX) + ', ' +
+                      (e.layerY || e.clientY));
+    }
   });
 });

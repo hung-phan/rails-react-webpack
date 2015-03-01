@@ -19,10 +19,11 @@
   },
   "dependencies": {
     "jquery": "*",
+    "js-csp": "^0.3.3",
     "lodash": "*",
-    "superagent": "*",
     "react": "*",
-    "react-router": "*"
+    "react-router": "*",
+    "superagent": "*"
   },
   "scripts": {
     "test": "jest"
