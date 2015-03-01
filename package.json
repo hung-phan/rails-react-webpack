@@ -9,21 +9,23 @@
     "node-notifier": "*"
   },
   "dependencies": {
-    "webpack": "*",
-    "chunk-manifest-webpack-plugin": "*",
     "babel": "*",
     "babel-core": "*",
     "babel-loader": "*",
     "babel-runtime": "*",
+    "chunk-manifest-webpack-plugin": "*",
     "exports-loader": "*",
-    "imports-loader": "*",
     "expose-loader": "*",
+    "imports-loader": "*",
     "jquery": "*",
     "js-csp": "^0.3.3",
     "lodash": "*",
     "react": "*",
+    "react-hot-loader": "^1.1.5",
     "react-router": "*",
-    "superagent": "*"
+    "superagent": "*",
+    "webpack": "*",
+    "webpack-dev-server": "^1.7.0"
   },
   "scripts": {
     "test": "jest"
