@@ -23,7 +23,7 @@ module.exports = {
     loaders: [{
       test: /.js$/,
       exclude: /node_modules(?!.*(\/js-csp))/,
-      loader: 'babel-loader?experimental&optional=runtime'
+      loader: 'babel-loader?optional=runtime'
     }]
   },
   plugins: [
