@@ -4,35 +4,36 @@
     "del": "*",
     "gulp": "*",
     "gulp-util": "*",
-    "jest-cli": "*",
     "minimist": "*",
-    "node-notifier": "*"
+    "node-notifier": "*",
+    "jsdom": "*",
+    "mocha": "*",
+    "istanbul": "*",
+    "chai": "*",
+    "react-hot-loader": "*",
+    "webpack-dev-server": "*"
   },
   "dependencies": {
+    "webpack": "*",
+    "chunk-manifest-webpack-plugin": "*",
     "babel": "*",
     "babel-core": "*",
     "babel-loader": "*",
     "babel-runtime": "*",
-    "chunk-manifest-webpack-plugin": "*",
     "exports-loader": "*",
-    "expose-loader": "*",
     "imports-loader": "*",
+    "expose-loader": "*",
+    "bundle-loader": "*",
     "jquery": "*",
-    "js-csp": "^0.3.3",
     "lodash": "*",
-    "react": "*",
-    "react-hot-loader": "^1.1.5",
-    "react-router": "*",
     "superagent": "*",
-    "webpack": "*",
-    "webpack-dev-server": "^1.7.0"
+    "react": "*",
+    "react-router": "*"
   },
   "scripts": {
-    "test": "jest",
+    "test": "mocha --watch --compilers js:compiler.js 'app/frontend/javascripts/**/*-test.js'",
+    "test-coverage": "istanbul cover node_modules/.bin/_mocha -- --compilers js:compiler.js 'app/frontend/javascripts/**/*-test.js'",
     "webpack-dev": "webpack-dev-server --config config/webpack/development.config.js --hot --progress --inline"
-  },
-  "jest": {
-    "scriptPreprocessor": "./preprocessor.js"
   },
   "license": "MIT",
   "engines": {

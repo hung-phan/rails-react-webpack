@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: './app/assets/javascripts/build',
-    publicPath: 'http://localhost:8080/assets/build/',
+    publicPath: '/assets/build/',
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js'
   },
@@ -22,7 +22,8 @@ module.exports = {
   module: {
     loaders: [{
       test: /.js$/,
-      exclude: /node_modules(?!.*(\/js-csp))/,
+      //exclude: /node_modules(?!.*(\/js-csp))/, // ignore node_modules except node_modules/js-csp
+      exclude: /node_modules/,
       loader: 'babel-loader?optional=runtime'
     }]
   },

@@ -6,7 +6,7 @@ var _                   = require('lodash'),
     webpack             = require('webpack');
 
 module.exports = _.merge(defaultConfig, {
-  devtool: 'source-map',
+  devtool: false,
   output: {
     path: './public/assets',
     publicPath: '/assets/',
@@ -14,7 +14,7 @@ module.exports = _.merge(defaultConfig, {
     chunkFilename: '[id]-[chunkhash].bundle.js'
   },
   plugins: [
-    //new webpack.optimize.CommonsChunkPlugin('common', 'common-[chunkhash].bundle.js'),
+    /*new webpack.optimize.CommonsChunkPlugin('common', 'common-[chunkhash].bundle.js'),*/ // Code splitting
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"', '__DEV__': false }),
     new ChunkManifestPlugin({
       filename: 'webpack-common-manifest.json',

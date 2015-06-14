@@ -15,7 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-/app/assets/javascripts/build
+app/assets/javascripts/build
 node_modules
-vendor/assets/bower_components
-public/assets/

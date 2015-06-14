@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'application#index'
-  mount API::Base => '/api'
+  mount APIS::Base => '/api'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

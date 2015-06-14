@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for rails-react-webpack/app/frontend/javascripts/home/home-test.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">rails-react-webpack/app/frontend/javascripts/home/home-test.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(22 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">83.33% <small>(5 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(3 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(21 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric">1 branch</span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../../index.html">All files</a> &#187; <a href="index.html">rails-react-webpack/app/frontend/javascripts/home/</a> &#187; home-test.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+// istanbul ignore next
+&nbsp;
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-skip" title="branch not covered" >obj </span>: { 'default': obj }; }
+&nbsp;
+var _reactAddons = require('react/addons');
+&nbsp;
+var _reactAddons2 = _interopRequireDefault(_reactAddons);
+&nbsp;
+var _reactLibExecutionEnvironment = require('react/lib/ExecutionEnvironment');
+&nbsp;
+var _reactLibExecutionEnvironment2 = _interopRequireDefault(_reactLibExecutionEnvironment);
+&nbsp;
+var _assert = require('assert');
+&nbsp;
+var _assert2 = _interopRequireDefault(_assert);
+&nbsp;
+var _jsdom = require('jsdom');
+&nbsp;
+// config React DOM
+_reactLibExecutionEnvironment2['default'].canUseDOM = true;
+&nbsp;
+<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof document === 'undefined') {
+  global.document = (0, _jsdom.jsdom)('&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;');
+  global.window = document.defaultView;
+  global.navigator = window.navigator;
+}
+&nbsp;
+describe('Home Component', function () {
+  it('should bind to DOM node', function () {
+    var TestUtils = _reactAddons2['default'].addons.TestUtils;
+&nbsp;
+    var Home = require('./home');
+&nbsp;
+    var Component = TestUtils.renderIntoDocument(_reactAddons2['default'].createElement(Home));
+&nbsp;
+    _assert2['default'].equal(Component.state.text, 'Click Me!');
+&nbsp;
+    TestUtils.Simulate.click(TestUtils.findRenderedDOMComponentWithClass(Component, 'clickMe'));
+&nbsp;
+    _assert2['default'].equal(Component.state.text, '!eM kcilC');
+  });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jb2xvcnZpc2EvRGVza3RvcC93b3JrYXJlYS93b3JraW5nLW9uL3JhaWxzLXJlYWN0LXdlYnBhY2svYXBwL2Zyb250ZW5kL2phdmFzY3JpcHRzL2hvbWUvaG9tZS10ZXN0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFlBQVksQ0FBQzs7Ozs7OzJCQUVLLGNBQWM7Ozs7NENBQ0MsZ0NBQWdDOzs7O3NCQUM5QyxRQUFROzs7O3FCQUNMLE9BQU87OztBQUc3QiwwQ0FBcUIsU0FBUyxHQUFHLElBQUksQ0FBQzs7QUFFdEMsSUFBSSxPQUFPLFFBQVEsS0FBSyxXQUFXLEVBQUU7QUFDbkMsUUFBTSxDQUFDLFFBQVEsR0FBRyxXQU5YLEtBQUssRUFNWSw0QkFBNEIsQ0FBQyxDQUFBO0FBQ3JELFFBQU0sQ0FBQyxNQUFNLEdBQUcsUUFBUSxDQUFDLFdBQVcsQ0FBQTtBQUNwQyxRQUFNLENBQUMsU0FBUyxHQUFHLE1BQU0sQ0FBQyxTQUFTLENBQUE7Q0FDcEM7O0FBRUQsUUFBUSxDQUFDLGdCQUFnQixFQUFFLFlBQU07QUFDL0IsSUFBRSxDQUFDLHlCQUF5QixFQUFFLFlBQU07UUFDN0IsU0FBUyxHQUFJLHlCQUFNLE1BQU0sQ0FBekIsU0FBUzs7QUFDZCxRQUFJLElBQUksR0FBRyxPQUFPLENBQUMsUUFBUSxDQUFDLENBQUM7O0FBRTdCLFFBQUksU0FBUyxHQUFHLFNBQVMsQ0FBQyxrQkFBa0IsQ0FDMUMseUJBQU0sYUFBYSxDQUFDLElBQUksQ0FBQyxDQUMxQixDQUFDOztBQUVGLHdCQUFPLEtBQUssQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLElBQUksRUFBRSxXQUFXLENBQUMsQ0FBQzs7QUFFaEQsYUFBUyxDQUFDLFFBQVEsQ0FBQyxLQUFLLENBQ3RCLFNBQVMsQ0FBQyxpQ0FBaUMsQ0FBQyxTQUFTLEVBQUUsU0FBUyxDQUFDLENBQ2xFLENBQUE7O0FBRUQsd0JBQU8sS0FBSyxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsSUFBSSxFQUFFLFdBQVcsQ0FBQyxDQUFDO0dBQ2pELENBQUMsQ0FBQztDQUNKLENBQUMsQ0FBQyIsImZpbGUiOiIvVXNlcnMvY29sb3J2aXNhL0Rlc2t0b3Avd29ya2FyZWEvd29ya2luZy1vbi9yYWlscy1yZWFjdC13ZWJwYWNrL2FwcC9mcm9udGVuZC9qYXZhc2NyaXB0cy9ob21lL2hvbWUtdGVzdC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0L2FkZG9ucyc7XG5pbXBvcnQgRXhlY3V0aW9uRW52aXJvbm1lbnQgZnJvbSAncmVhY3QvbGliL0V4ZWN1dGlvbkVudmlyb25tZW50JztcbmltcG9ydCBhc3NlcnQgZnJvbSAnYXNzZXJ0JztcbmltcG9ydCB7IGpzZG9tIH0gZnJvbSAnanNkb20nO1xuXG4vLyBjb25maWcgUmVhY3QgRE9NXG5FeGVjdXRpb25FbnZpcm9ubWVudC5jYW5Vc2VET00gPSB0cnVlO1xuXG5pZiAodHlwZW9mIGRvY3VtZW50ID09PSAndW5kZWZpbmVkJykge1xuICBnbG9iYWwuZG9jdW1lbnQgPSBqc2RvbSgnPGh0bWw+PGJvZHk+PC9ib2R5PjwvaHRtbD4nKVxuICBnbG9iYWwud2luZG93ID0gZG9jdW1lbnQuZGVmYXVsdFZpZXdcbiAgZ2xvYmFsLm5hdmlnYXRvciA9IHdpbmRvdy5uYXZpZ2F0b3Jcbn1cblxuZGVzY3JpYmUoJ0hvbWUgQ29tcG9uZW50JywgKCkgPT4ge1xuICBpdCgnc2hvdWxkIGJpbmQgdG8gRE9NIG5vZGUnLCAoKSA9PiB7XG4gICAgbGV0IHtUZXN0VXRpbHN9ID0gUmVhY3QuYWRkb25zO1xuICAgIGxldCBIb21lID0gcmVxdWlyZSgnLi9ob21lJyk7XG5cbiAgICBsZXQgQ29tcG9uZW50ID0gVGVzdFV0aWxzLnJlbmRlckludG9Eb2N1bWVudChcbiAgICAgIFJlYWN0LmNyZWF0ZUVsZW1lbnQoSG9tZSlcbiAgICApO1xuXG4gICAgYXNzZXJ0LmVxdWFsKENvbXBvbmVudC5zdGF0ZS50ZXh0LCAnQ2xpY2sgTWUhJyk7XG5cbiAgICBUZXN0VXRpbHMuU2ltdWxhdGUuY2xpY2soXG4gICAgICBUZXN0VXRpbHMuZmluZFJlbmRlcmVkRE9NQ29tcG9uZW50V2l0aENsYXNzKENvbXBvbmVudCwgJ2NsaWNrTWUnKVxuICAgIClcblxuICAgIGFzc2VydC5lcXVhbChDb21wb25lbnQuc3RhdGUudGV4dCwgJyFlTSBrY2lsQycpO1xuICB9KTtcbn0pO1xuIl19</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 14 2015 17:20:51 GMT+0700 (ICT)</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

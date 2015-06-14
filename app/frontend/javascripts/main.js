@@ -4,29 +4,20 @@
 require('expose?jQuery!expose?$!jquery');
 require('expose?React!react/addons');
 
-let csp        = require('js-csp');
-let $          = require('jquery');
-let _          = require('lodash');
-let superagent = require('superagent');
+let $      = require('jquery');
+let React  = require('react/addons');
+let Router = require('react-router');
 
-function listen(el, type) {
-  var ch = csp.chan();
-  el.addEventListener(type, function(e) {
-    console.time("listen-event");
-    csp.putAsync(ch, e);
-  });
-  return ch;
-}
+// component
+let Home = require('./home/home');
 
-$(document).ready(() => {
-  csp.go(function*() {
-    var el = document.getElementById('ui');
-    var ch = listen(el, 'mousemove');
-    while(true) {
-      var e = yield csp.take(ch);
-      console.timeEnd("listen-event");
-      el.innerHTML = ((e.layerX || e.clientX) + ', ' +
-                      (e.layerY || e.clientY));
-    }
+$(document).ready(function() {
+  // define routing
+  let routes = (
+    <Router.Route name='main_page' path='/' handler={Home}></Router.Route>
+  );
+
+  Router.run(routes, Router.HashLocation, function(Handler) {
+    React.render(React.createFactory(Handler)(), document.getElementById('route'));
   });
 });
